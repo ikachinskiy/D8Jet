@@ -17,6 +17,8 @@
 /web/sites/*/files/languages
 /web/sites/*/files/php/twig
 
+/config/*
+
 
 
 # Ignore SimpleTest multi-site environment.
