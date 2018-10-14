@@ -31,3 +31,9 @@ $settings['trusted_host_patterns'] = [
     '^d8jet$',
     '^localhost$',
 ];
+
+/*
+ * Базовый URL публичных файлов
+ */
+$settings['file_public_base_url'] = 'http://d8jet/sites/default/files';
+

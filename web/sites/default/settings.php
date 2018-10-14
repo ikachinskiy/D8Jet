@@ -88,7 +88,20 @@
  * );
  * @endcode
  */
-$databases = [];
+/**
+ * Настройка подключения к локальной базе данных
+ * конфигурации Production
+ */
+$databases['default']['default'] = [
+  'database' => 'd8jet',
+  'username' => 'postgres',
+  'password' => '1q2w3e4r@',
+  'prefix' => '',
+  'host' => 'localhost',
+  'port' => '5432',
+  'namespace' => 'Drupal\\Core\\Database\\Driver\\pgsql',
+  'driver' => 'pgsql',
+];
 
 /**
  * Customizing database settings.
@@ -251,7 +264,11 @@ $databases = [];
  *   );
  * @endcode
  */
-$config_directories = [];
+/*
+ * Расположение папки для хранения конфигураций
+ */
+$config_directories['sync'] = '../config/sync';
+
 
 /**
  * Settings:
@@ -510,7 +527,7 @@ if ($settings['hash_salt']) {
  * security by serving user-uploaded files from a different domain or subdomain
  * pointing to the same server. Do not include a trailing slash.
  */
-# $settings['file_public_base_url'] = 'http://downloads.example.com/files';
+$settings['file_public_base_url'] = 'http://www.smartnet.ru/sites/default/files';
 
 /**
  * Public file path:
@@ -519,7 +536,7 @@ if ($settings['hash_salt']) {
  * must exist and be writable by Drupal. This directory must be relative to
  * the Drupal installation directory and be accessible over the web.
  */
-# $settings['file_public_path'] = 'sites/default/files';
+$settings['file_public_path'] = 'sites/default/files';
 
 /**
  * Private file path:
@@ -534,7 +551,7 @@ if ($settings['hash_salt']) {
  * See https://www.drupal.org/documentation/modules/file for more information
  * about securing private files.
  */
-# $settings['file_private_path'] = '';
+$settings['file_private_path'] = '../private';
 
 /**
  * Session write interval:
@@ -759,22 +776,6 @@ $settings['file_scan_ignore_directories'] = [
  * larger number of entities to be processed in a single batch run.
  */
 $settings['entity_update_batch_size'] = 50;
-
-/**
- * Настройка подключения к локальной базе данных
- * конфигурации Production
- */
-$config_directories['sync'] = '../config/sync';
-$databases['default']['default'] = [
-  'database' => 'd8jet',
-  'username' => 'postgres',
-  'password' => '1q2w3e4r@',
-  'prefix' => '',
-  'host' => 'localhost',
-  'port' => '5432',
-  'namespace' => 'Drupal\\Core\\Database\\Driver\\pgsql',
-  'driver' => 'pgsql',
-];
 
 /**
  * Load local development override configuration, if available.

@@ -1,0 +1,4 @@
+name: SNG
+type: module
+description: 'Это тестовый модуль SNG.'
+core: 8.x

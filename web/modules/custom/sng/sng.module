@@ -1,0 +1,21 @@
+<?php
+  /**
+   * @file
+   * Это тестовый модуль SNG.
+   */
+use Drupal\Core\Url;
+  /**
+   * Implements hook_theme().
+   */
+  /**
+   * @param $existing
+   * @param $type
+   * @param $theme
+   * @param $path
+   */
+  function sng_theme($existing, $type, $theme, $path) {
+    $a = [
+      'q' => '12'
+    ];
+    Url::fromRoute('user.login');
+  }
